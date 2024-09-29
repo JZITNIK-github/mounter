@@ -139,4 +139,13 @@ pub fn umount_addr(mount_location: &str, config: &HashMap<String, String>) {
         eprintln!("Stderr: {}", String::from_utf8_lossy(&output.stderr));
         exit(1);
     }
+
+    console_log(
+        config,
+        format!(
+            "Drive that was mounted on {} was unmounted!",
+            mount_location
+        )
+        .as_str(),
+    )
 }
